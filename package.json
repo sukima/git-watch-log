@@ -1,16 +1,17 @@
 {
   "name": "git-watch-log",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple git repo watcher for experimenting and teaching.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "bin": {
     "git-watch-log": "./cli.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sukima/git-watch-log"
+  },
   "author": "Devin Weaver <suki@tritarget.org> (http://tritarget.org/)",
-  "license": "ISC",
+  "license": "WYWTPL",
   "dependencies": {
     "chokidar": "^1.0.0-rc4"
   }
