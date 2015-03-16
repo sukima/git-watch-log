@@ -1,6 +1,6 @@
 {
   "name": "git-watch-log",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple git repo watcher for experimenting and teaching.",
   "main": "index.js",
   "bin": {
@@ -12,6 +12,13 @@
   },
   "author": "Devin Weaver <suki@tritarget.org> (http://tritarget.org/)",
   "license": "WYWTPL",
+  "keywords": [
+    "git",
+    "watch",
+    "filesystem",
+    "teach",
+    "presentation"
+  ],
   "dependencies": {
     "chokidar": "^1.0.0-rc4"
   }
