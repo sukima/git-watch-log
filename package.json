@@ -20,6 +20,8 @@
     "presentation"
   ],
   "dependencies": {
-    "chokidar": "^1.0.0-rc4"
+    "bluebird": "^2.9.14",
+    "chokidar": "^1.0.0-rc4",
+    "optimist": "^0.6.1"
   }
 }
