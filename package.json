@@ -1,8 +1,9 @@
 {
   "name": "git-watch-log",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A simple git repo watcher for experimenting and teaching.",
   "main": "index.js",
+  "preferGlobal": true,
   "bin": {
     "git-watch-log": "./cli.js"
   },
@@ -23,5 +24,8 @@
     "bluebird": "^2.9.14",
     "chokidar": "^1.0.0-rc4",
     "yargs": "^3.5.4"
+  },
+  "engines": {
+    "node": "~0.10.33"
   }
 }
