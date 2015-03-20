@@ -8,6 +8,11 @@ I wrote this because I wanted an automatic representation of the current
 state of things in a git repo. I use this while teaching git so students
 can see how each command effects the log and status in real time.
 
+Don't forget to check out [git-watch-web][] the web based / d3 / socket.io
+companion for this.
+
+[git-watch-web]: https://www.npmjs.com/package/git-watch-web
+
 ## Install
 
 This is a [Node.js](https://nodejs.org/) project and is packaged through
