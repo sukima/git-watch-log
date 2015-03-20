@@ -51,7 +51,7 @@ if (argv.json) {
 } else {
   watcher
     .on('refresh', function(output) {
-      console.log(output);
+      console.log('\033c' + output);
     })
     .watch();
 }
