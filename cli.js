@@ -1,23 +1,29 @@
 #!/usr/bin/env node
-var GitWatcher = require('./');
-var args       = require('optimist').argv;
 var projectDir, watcher;
+var GitWatcher = require('./');
 
-if (args.h || args.help) {
-  console.log([
-    'Usage: git-watch-log [--json] [projectDir]',
-    '  projectDir defaults to current directory',
-    '  -j, --json  output in JSON format',
-    'Press CTRL-C to exit.'
-  ].join('\n'));
-  process.exit(0);
-}
+var argv = require('yargs')
+  .usage('Usage: git-watch-log [--json] [--dir=<projectDir>]')
+  .help('help').alias('help', 'h')
+  .options({
+    json: {
+      alias:       'j',
+      boolean:     true,
+      description: 'Output in JSON format.'
+    },
+    dir: {
+      alias:       'd',
+      requiresArg: true,
+      default:     './',
+      description: 'The git repo working directory.'
+    }
+  })
+  .epilogue('Press CTRL-C to exit a running program.')
+  .argv;
 
-var jsonMode = (args.j || args.json);
+projectDir = argv.dir === './' ? process.cwd() : argv.dir;
 
-projectDir = args._[0] || process.cwd();
-
-if (jsonMode) {
+if (argv.json) {
   watcher = new GitWatcher.JsonWatcher(projectDir);
 } else {
   watcher = new GitWatcher.TerminalWatcher(projectDir);
@@ -32,7 +38,7 @@ watcher.on('error', function(output) {
   console.error(output);
 });
 
-if (jsonMode) {
+if (argv.json) {
   watcher
     .on('refresh', function(output) {
       console.log(JSON.stringify(output));
