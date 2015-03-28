@@ -13,6 +13,8 @@ companion for this.
 
 [git-watch-web]: https://www.npmjs.com/package/git-watch-web
 
+![Screen Shot](/../screenshots/screen-shot.png?raw=true)
+
 ## Install
 
 This is a [Node.js](https://nodejs.org/) project and is packaged through
